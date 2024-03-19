@@ -29,6 +29,9 @@ def create_app(test_config=None):
     )
     app.config.from_pyfile("config.py")
     
+    from .auth.views.login import auth
+    app.register_blueprint(auth)
+    
     if test_config is None:
         # load the instance config, if it exists, when not testing
         app.config.from_pyfile('config.py', silent=True)
@@ -37,21 +40,14 @@ def create_app(test_config=None):
         app.config.from_mapping(test_config)
 
     # ensure the instance folder exists
-    try:
-        os.makedirs(app.instance_path)
-    except OSError:
-        pass
+    try: os.makedirs(app.instance_path)
+    except OSError: pass
 
     # a base page
     @app.route('/')
     def main():
-        return redirect(url_for('auth_blueprint.login'))
-            
-    @app.route('/intro', methods = ['GET','POST'])
-    def intro():
-        if request.method == 'POST':
-            return redirect(url_for('auth_blueprint.index'))
-        return render_template("intro.html")
+        return redirect(url_for('auth.login'))
+    
     return app
 
 
