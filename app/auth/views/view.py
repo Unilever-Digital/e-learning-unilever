@@ -12,11 +12,9 @@ auth = Blueprint("auth", __name__)
 def login():
     if request.method == "POST":
         if request.values() == "login":
-            return render_template("home.html")
-    return render_template("login.html")
+            return render_template("blog/home.html")
+    return render_template("auth/login.html")
 
 
-@auth.route("/home",  methods = ["POST", "GET"])
-def home():
-    return render_template("home.html")
+
     
