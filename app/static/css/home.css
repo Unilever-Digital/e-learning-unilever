@@ -6,6 +6,7 @@
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .tool-bar {
@@ -19,4 +20,28 @@
 .navigation-home-bar {
     margin-right: 0px;
     margin-top: 0px;
+    position: fixed;
+}
+
+.user-button {
+    border: 0px;
+    background-color: #ffffff;
+    margin-right: 0px;
+    position: absolute;
+}
+
+.setting-button {
+    border: 0px;
+    background-color: #ffffff;
+    margin-right: 0px;
+    position: absolute;
+}
+
+.label-privacy {
+    position: fixed;
+    height: 25px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 0%;
+    background-color: #ececec;
 }
