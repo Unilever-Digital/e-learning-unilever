@@ -13,4 +13,6 @@ blog = Blueprint("blog", __name__)
 def home():
     return render_template("blog/home.html")
 
-@blod.route("/home")
+@blog.route("/user", methods = ["POST", "GET"])
+def user():
+    return render_template("blog/user.html")
