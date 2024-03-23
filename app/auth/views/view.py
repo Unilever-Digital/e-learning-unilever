@@ -16,7 +16,7 @@ auth = Blueprint("auth", __name__)
 def login():
     if request.method == "POST":
         if request.form.get('button') == "login":
-            return render_template("blog/home.html")
+            return redirect(url_for('blog.home'))
     return render_template("auth/login.html")
 
 
