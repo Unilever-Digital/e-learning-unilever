@@ -13,7 +13,7 @@ auth = Blueprint("auth", __name__)
 @auth.route("/login", methods = ["POST", "GET"])
 def login():
     if request.method == "POST":
-        if request.values() == "login":
+        if request.values['button'] == "login":
             return redirect(url_for('blog.home'))
     return render_template("auth/login.html")
 
