@@ -1,4 +1,8 @@
 .env
 .venv
 .pycache
-.py-cache
+
+__pycache__/
+env/
+
+src/secret.json
